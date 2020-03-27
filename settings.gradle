@@ -1,0 +1,2 @@
+rootProject.name='LoveMemory'
+include ':app'
