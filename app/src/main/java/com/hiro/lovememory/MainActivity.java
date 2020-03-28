@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
     Date startDate;
     RelativeLayout mainLayout;
     TextView txvDays;
+    ImageButton btnExit, btnInfo, imgbtnHeart;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +59,29 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         txvDays = findViewById(R.id.txvDays);
+        btnExit = findViewById(R.id.btnExit);
+        btnInfo = findViewById(R.id.btnInfo);
+        imgbtnHeart = findViewById(R.id.imgbtnHeart);
+        imgbtnHeart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SetStartDate();
+            }
+        });
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ExitApp();
+            }
+        });
+        btnInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Love Memory - Develop by Văn Phát IT", Toast.LENGTH_LONG).show();
+            }
+        });
+
         file = new File(MainActivity.this.getFilesDir(), "startDate");
         if (!file.exists()){
             SetStartDate();
@@ -73,8 +96,6 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e){
                 Toast.makeText(this, "Error while reading", Toast.LENGTH_SHORT).show();
             }
-
-
         }
     }
 

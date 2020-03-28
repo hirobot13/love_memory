@@ -3,14 +3,31 @@
     android:layout_width="match_parent"
     android:id="@+id/mainLayout"
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton
+        android:id="@+id/btnExit"
+        android:background="@null"
+        android:src="@drawable/close_circle_outline"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageButton
+        android:id="@+id/btnInfo"
+        android:background="@null"
+        android:src="@drawable/information_outline"
+        android:layout_toLeftOf="@id/btnExit"
+        android:layout_marginVertical="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     <FrameLayout
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/imgHeart"
+        <ImageButton
+            android:id="@+id/imgbtnHeart"
             android:background="@null"
             android:src="@drawable/heart"
+            android:scaleType="fitCenter"
             android:layout_width="200dp"
             android:layout_height="200dp"/>
         <TextView
